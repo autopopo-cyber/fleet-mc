@@ -99,7 +99,8 @@ export function TaskTreePanel() {
         const pData = pRes.ok ? await pRes.json() : {}
         setTasks(tData.tasks || [])
         setProjects(pData.projects || [])
-      } catch (e) { /* silently use empty state */ }
+        console.log('TaskTree loaded:', tData.tasks?.length, 'tasks,', pData.projects?.length, 'projects')
+      } catch (e) { console.error('TaskTree load error:', e) }
       setLoading(false)
     }
     load()
