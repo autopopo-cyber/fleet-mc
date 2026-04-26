@@ -939,7 +939,7 @@ export const useMissionControl = create<MissionControlStore>()(
     },
 
     // Interface Mode
-    interfaceMode: 'essential' as const,
+    interfaceMode: 'full' as const,  // 仙秦: default full mode
     setInterfaceMode: (mode) => set({ interfaceMode: mode }),
 
     // UI State — sidebar & layout persistence
