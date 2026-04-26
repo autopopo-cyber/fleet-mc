@@ -86,7 +86,6 @@ export function TaskTreePanel() {
   const [tasks, setTasks] = useState<Task[]>([])
   const [projects, setProjects] = useState<Project[]>([])
   const [collapsed, setCollapsed] = useState<Set<number>>(new Set())
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function load() {
@@ -99,9 +98,7 @@ export function TaskTreePanel() {
         const pData = pRes.ok ? await pRes.json() : {}
         setTasks(tData.tasks || [])
         setProjects(pData.projects || [])
-        console.log('TaskTree loaded:', tData.tasks?.length, 'tasks,', pData.projects?.length, 'projects')
-      } catch (e) { console.error('TaskTree load error:', e) }
-      setLoading(false)
+      } catch (e) { /* silently use empty state */ }
     }
     load()
   }, [])
@@ -125,9 +122,6 @@ export function TaskTreePanel() {
     return grouped
   }, [tasks])
 
-  if (loading) {
-    return <div className="p-6 text-muted-foreground text-sm">加载中...</div>
-  }
 
   return (
     <div className="task-tree-panel h-full overflow-auto">
