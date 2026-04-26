@@ -429,8 +429,8 @@ export default function Home() {
           aria-hidden={showOnboarding}
         >
           <div aria-live="polite" className="flex flex-col min-h-full">
-            <ErrorBoundary key={activeTab}>
-              <ContentRouter tab={activeTab} />
+            <ErrorBoundary key={normalizedPanel}>
+              <ContentRouter tab={normalizedPanel || activeTab} />
             </ErrorBoundary>
           </div>
 {/* Footer removed — attribution moved to nav sidebar */}
