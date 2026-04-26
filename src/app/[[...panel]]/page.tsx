@@ -249,23 +249,8 @@ export default function Home() {
       })
       .catch(() => {})
 
-    // Check for OpenClaw updates
-    fetch('/api/openclaw/version')
-      .then(res => res.ok ? res.json() : null)
-      .then(data => {
-        if (data?.updateAvailable) {
-          setOpenclawUpdate({
-            installed: data.installed,
-            latest: data.latest,
-            releaseUrl: data.releaseUrl,
-            releaseNotes: data.releaseNotes,
-            updateCommand: data.updateCommand,
-          })
-        } else {
-          setOpenclawUpdate(null)
-        }
-      })
-      .catch(() => {})
+    // OpenClaw version check disabled for 仙秦 (Hermes-native fleet)
+    // fetch('/api/openclaw/version') ... → no-op
 
     // Check capabilities, then conditionally connect to gateway
     fetch('/api/status?action=capabilities')
