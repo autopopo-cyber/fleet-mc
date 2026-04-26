@@ -103,6 +103,11 @@ export function TaskTreePanel() {
     load()
   }, [])
 
+  // DEBUG: always show something
+  const displayProjects = projects.length > 0 ? projects : [
+    { id: 0, name: '加载中...', slug: 'loading', status: 'active', color: '#6b7280' }
+  ]
+
   const toggle = (id: number) => {
     setCollapsed(prev => {
       const next = new Set(prev)
@@ -127,7 +132,7 @@ export function TaskTreePanel() {
     <div className="task-tree-panel h-full overflow-auto">
       {/* Horizontal scroll wrapper */}
       <div className="min-w-max p-4">
-        {projects.map(project => {
+        {displayProjects.map(project => {
           const projectTasks = projectGroups.get(project.id) || []
           const rootNodes = buildTree(projectTasks, null, 0)
           if (rootNodes.length === 0) return null
