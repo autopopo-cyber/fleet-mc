@@ -141,6 +141,13 @@ export default function Home() {
     }
   }, [initSteps, bootComplete, setBootComplete])
 
+  // Fallback: auto-complete boot after 8s if any step hangs
+  useEffect(() => {
+    if (bootComplete) return
+    const timer = setTimeout(() => setBootComplete(), 8000)
+    return () => clearTimeout(timer)
+  }, [bootComplete, setBootComplete])
+
   // Security console warning (anti-self-XSS)
   useEffect(() => {
     if (!bootComplete) return
