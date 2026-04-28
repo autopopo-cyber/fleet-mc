@@ -2,8 +2,7 @@
 
 PLAN_TREE_PHILOSOPHY: Plan-Tree 是一门精炼语言——用较少的信息量粗略构造一段时空及其逻辑演进。节点是逻辑时空道标，描述的是一段行为在四维时空中的位置和因果方向。缩放自如：需要精细时可分化到毫秒/原子尺度，不需要时缩小到纪元尺度。——与自然语言同源（从语言→数学→物理→计算机→LLM→Plan-Tree，共同本质是压缩）。
 
-## ROOT // 舰队生存与演化 // [04-25 21:18→04-27 22:58] // 优先级:HIGH
-
+## ROOT // 舰队生存与演化 // [04-25 21:18→04-28 08:14] // 优先级:HIGH
 ## CRASH_FIX // Gateway 502 修复 + Cron 会话隔离 // [04-26 09:07→04-27 01:19] // ✅ RESOLVED // 优先级:CRITICAL
   💡 ROOT_CAUSE: 09:03 gateway自杀 — 某个hermes会话通过gateway spawn子进程执行了 systemctl stop gateway
     触发=agent-browser同时出现 → 会话在清理bridge僵尸时选择了"重启gateway"
@@ -40,7 +39,7 @@ PLAN_TREE_PHILOSOPHY: Plan-Tree 是一门精炼语言——用较少的信息量
   关键发现: V2EX API无发帖接口, Reddit有完整OAuth API
   研究文档: ~/llm-wiki/hermes-ops/forum-posting-research-2026-04-26.md
 
-## MC_INTEGRATION // MC双向集成 // [04-25 21:18→04-27 14:21]
+## MC_INTEGRATION // MC双向集成 // [04-25 21:18→04-28 08:14]
   ✅ MC_POLL_DEPLOY // Agent自动拉MC任务 // [04-26 11:48→11:50]
     白起+王翦已部署 mc-poll.sh + cron(每5分钟)
     判定: MC-18 inbox→assigned→in_progress 全自动

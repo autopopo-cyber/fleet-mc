@@ -1,0 +1,153 @@
+=== 2026-04-28 07:20:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=37237s, MC状态=offline
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0720.md (0 issues, 0 fixed)
+=== 2026-04-28 07:30:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=37836s, MC状态=offline
+  🔍 Artifact 验证...
+     审查 review 任务 #100 NAV-020 (xueying)
+     ⚠️ #100 NAV-020: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #99 NAV-019 (junxiu)
+     ⚠️ #99 NAV-019: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #95 NAV-015 (wangjian)
+     ⚠️ #95 NAV-015: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #91 NAV-012 (wangjian)
+     ⚠️ #91 NAV-012: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #90 A2-005 (白起)
+     ⚠️ #90 A2-005: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #86 FMP-011 (红婳)
+     ⚠️ #86 FMP-011: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #82 FORUM-004 (红婳)
+     ⚠️ #82 FORUM-004: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #76 A2-003 (白起)
+     ⚠️ #76 A2-003: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #79 FORUM-003 (萱萱)
+     ⚠️ #79 FORUM-003: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #60 MCI-008 (chengxiang)
+     ⚠️ #60 MCI-008: review 但无 git 产物 — 可能是幻觉
+     审查 done 任务 #81 NAV-010
+     ⚠️ #81 NAV-010: done 但无 QA audit 文件 — 可能是幻觉
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0730.md (0 issues, 0 fixed)
+=== 2026-04-28 07:40:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=38436s, MC状态=offline
+  🔍 Artifact 验证...
+     审查 review 任务 #100 NAV-020 (xueying)
+     ⚠️ #100 NAV-020: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #94 NAV-014 (baiqi)
+     ⚠️ #94 NAV-014: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #95 NAV-015 (wangjian)
+     ⚠️ #95 NAV-015: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #91 NAV-012 (wangjian)
+     ⚠️ #91 NAV-012: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #90 A2-005 (白起)
+     ⚠️ #90 A2-005: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #86 FMP-011 (红婳)
+     ⚠️ #86 FMP-011: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #82 FORUM-004 (红婳)
+     ⚠️ #82 FORUM-004: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #76 A2-003 (白起)
+     ⚠️ #76 A2-003: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #79 FORUM-003 (萱萱)
+     ⚠️ #79 FORUM-003: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #60 MCI-008 (chengxiang)
+     ⚠️ #60 MCI-008: review 但无 git 产物 — 可能是幻觉
+     审查 done 任务 #81 NAV-010
+     ⚠️ #81 NAV-010: done 但无 QA audit 文件 — 可能是幻觉
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0740.md (0 issues, 0 fixed)
+=== 2026-04-28 07:50:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=39036s, MC状态=offline
+  🔍 Artifact 验证...
+     审查 review 任务 #99 NAV-019 (junxiu)
+     ⚠️ #99 NAV-019: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #95 NAV-015 (wangjian)
+     ⚠️ #95 NAV-015: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #91 NAV-012 (wangjian)
+     ⚠️ #91 NAV-012: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #90 A2-005 (白起)
+     ⚠️ #90 A2-005: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #86 FMP-011 (红婳)
+     ⚠️ #86 FMP-011: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #82 FORUM-004 (红婳)
+     ⚠️ #82 FORUM-004: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #76 A2-003 (白起)
+     ⚠️ #76 A2-003: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #79 FORUM-003 (萱萱)
+     ⚠️ #79 FORUM-003: review 但无 git 产物 — 可能是幻觉
+     审查 review 任务 #60 MCI-008 (chengxiang)
+     ⚠️ #60 MCI-008: review 但无 git 产物 — 可能是幻觉
+     审查 done 任务 #81 NAV-010
+     ⚠️ #81 NAV-010: done 但无 QA audit 文件 — 可能是幻觉
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0750.md (0 issues, 0 fixed)
+=== 2026-04-28 08:00:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=39636s, MC状态=offline
+  🔍 Artifact 验证...
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0800.md (0 issues, 0 fixed)
+=== 2026-04-28 08:10:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=40237s, MC状态=offline
+  🔍 Artifact 验证...
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0810.md (0 issues, 0 fixed)
