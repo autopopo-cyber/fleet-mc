@@ -1,1 +1,2 @@
 [2026-04-28 01:11 UTC] IDLE — no tasks available for 萱萱 (MC response: {"task":null,"reason":"no_tasks_available","agent":"萱萱","timestamp":1777309883})
+[2026-04-28 08:47 CST] L1轮询 — IDLE(无新任务)。Queue返回 {task:null,reason:no_tasks_available}。Δ: 无。NAV全链R1-R6 FAILED不变(萱萱R5 dsp×8)。QA NAV-19/20/21 assigned(dsp×0~3)。全Agent 37 tasks活跃。萱萱own: 0 inbox/4 tasks。cross=ok。

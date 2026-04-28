@@ -151,3 +151,168 @@
   💔 #101 xiangbang: 心跳延迟 gap=40237s, MC状态=offline
   🔍 Artifact 验证...
   📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0810.md (0 issues, 0 fixed)
+=== 2026-04-28 08:20:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=40836s, MC状态=offline
+  🔍 Artifact 验证...
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0820.md (0 issues, 0 fixed)
+=== 2026-04-28 08:30:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=41436s, MC状态=offline
+  🔍 Artifact 验证...
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0830.md (0 issues, 0 fixed)
+=== 2026-04-28 08:40:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=42036s, MC状态=offline
+  🔍 Artifact 验证...
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0840.md (0 issues, 0 fixed)
+=== 2026-04-28 08:50:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=42636s, MC状态=offline
+  🔍 Artifact 验证...
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0850.md (0 issues, 0 fixed)
+=== 2026-04-28 09:00:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=43236s, MC状态=offline
+  🔍 Artifact 验证...
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0900.md (0 issues, 0 fixed)
+=== 2026-04-28 09:10:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=43837s, MC状态=offline
+  🔍 Artifact 验证...
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0910.md (0 issues, 0 fixed)
+=== 2026-04-28 09:20:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=44436s, MC状态=offline
+  🔍 Artifact 验证...
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0920.md (0 issues, 0 fixed)
+=== 2026-04-28 09:30:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=45036s, MC状态=offline
+  🔍 Artifact 验证...
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0930.md (0 issues, 0 fixed)
+=== 2026-04-28 09:40:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=45636s, MC状态=offline
+  🔍 Artifact 验证...
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0940.md (0 issues, 0 fixed)
+=== 2026-04-28 09:50:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=46236s, MC状态=offline
+  🔍 Artifact 验证...
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-0950.md (0 issues, 0 fixed)
+=== 2026-04-28 10:00:01 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=46836s, MC状态=offline
+  🔍 Artifact 验证...
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-1000.md (0 issues, 0 fixed)

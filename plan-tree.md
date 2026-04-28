@@ -2,24 +2,8 @@
 
 PLAN_TREE_PHILOSOPHY: Plan-Tree 是一门精炼语言——用较少的信息量粗略构造一段时空及其逻辑演进。节点是逻辑时空道标，描述的是一段行为在四维时空中的位置和因果方向。缩放自如：需要精细时可分化到毫秒/原子尺度，不需要时缩小到纪元尺度。——与自然语言同源（从语言→数学→物理→计算机→LLM→Plan-Tree，共同本质是压缩）。
 
-## ROOT // 舰队生存与演化 // [04-25 21:18→04-28 08:14] // 优先级:HIGH
-## CRASH_FIX // Gateway 502 修复 + Cron 会话隔离 // [04-26 09:07→04-27 01:19] // ✅ RESOLVED // 优先级:CRITICAL
-  💡 ROOT_CAUSE: 09:03 gateway自杀 — 某个hermes会话通过gateway spawn子进程执行了 systemctl stop gateway
-    触发=agent-browser同时出现 → 会话在清理bridge僵尸时选择了"重启gateway"
-    根因=cron会话隔离问题: 多个"我"在互不知情的情况下操作同一系统
-  ✅ CRASH_BRIDGE_CLEAN // 安全bridge清理脚本 // [04-26 09:10→09:12]
-    判定: kill stale bridge (>30min) WITHOUT touching gateway
-    脚本: ~/.hermes/scripts/bridge-cleanup.sh
-  ✅ CRASH_SESSION_LOCK // 会话互斥锁 // [04-26 09:10→09:12]
-    判定: acquire_lock "task-name" 防止并发冲突
-    脚本: ~/.hermes/scripts/session-lock.sh (trap EXIT自动释放)
-  ✅ CRASH_DAILY_FIX // 日报脚本修复 // [04-26 09:12→09:14]
-    判定: hermes用完整路径 $HOME/.local/bin/hermes
-    PATH: crontab顶部注入 /home/agentuser/.local/bin:/home/agentuser/.hermes/hermes-agent/venv/bin
-    新增: 执行前先 acquire_lock + bridge-cleanup
-  ✅ CRASH_PROTECT // Gateway防自杀 // [04-26 09:15→09:30]
-    Skill已创建: devops/hermes-gateway-crash-recovery (含bridge-cleanup.sh + session-lock.sh)
-    判定: 下次crash时可复用诊断流程 ✅
+## ROOT // 舰队生存与演化 // [04-25 21:18→04-28 09:55] // 优先级:HIGH
+## CRASH_FIX // Gateway 502 修复 + Cron 会话隔离 // [04-26 09:07→04-27 01:19] // ✅ RESOLVED → wiki:plan-CRASH-FIX
 
 ## NAV_DOG // 机器狗避障开发 // [04-25 21:18→04-27 22:58] // MC:NAV-1~7 // 负责人:白起+王翦 // 优先级:HIGH
   ❓ NAV-1~5 (前5步) — 计划标记✅但节点上无代码产物（待确认是否为规划稿）
@@ -45,7 +29,7 @@ PLAN_TREE_PHILOSOPHY: Plan-Tree 是一门精炼语言——用较少的信息量
     判定: MC-18 inbox→assigned→in_progress 全自动
     SSH推送正式降级为备用方案
 
-## INFRA // 基础设施 // [04-25 21:18→04-27 14:21]
+## INFRA // 基础设施 // [04-25 21:18→04-28 09:55]
   💡 MODEL_SWAP // 副模型方案已确认 // [04-26 00:29]
     工具: V4 Flash $0.28/M, 视觉: Qwen3-VL-32B $0.416/M
     时机=等君上说"换"
@@ -59,17 +43,6 @@ PLAN_TREE_PHILOSOPHY: Plan-Tree 是一门精炼语言——用较少的信息量
   ✅ MC_LOGIN_FIX // MC登录 // [04-25 21:18→04-27 04:14]
   ✅ WEBUI_SETUP // 丞相WebUI // [04-25 21:18→04-27 04:14] // ✅ DONE
 
-## PLAN_TREE_OPTIMIZE // Plan-Tree优化研究(元任务) // [04-25 21:18→04-27 14:21]
+## PLAN_TREE_OPTIMIZE // Plan-Tree优化研究(元任务) // [04-25 21:18→04-28 09:55]
   💡 PHILOSOPHY // 精炼语言+逻辑时空道标 // [04-25 21:18→04-27 04:14]
   ✅ 审查已下发 // 白起:反馈✅ 王翦:未反馈 丞相:未反馈
-
-## LOGICAL_MARKERS // 逻辑时空道标 (推理链)
-  ROOT (舰队生存)
-    ├→ CRASH_FIX (为什么？连续2次502崩溃，君上反馈+今天9AM触发)
-    │   ├→ 根因=cron新会话无上下文导致多个"我"互不知情
-    │   ├→ bridge-cleanup.sh (杀bridge≠杀gateway)
-    │   ├→ session-lock.sh (防并发操作)
-    │   └→ 日报+crontab PATH修复
-    ├→ NAV_DOG (机器狗避障，RTX2080Ti×2)
-    │   └→ ⚙️ 白起MC#89+王翦MC#91推进中
-    ├→ A2_SIM (宇树A2仿真，MC#76/#90/#92推进中)
