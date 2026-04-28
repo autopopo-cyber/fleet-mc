@@ -316,3 +316,18 @@
   💔 #101 xiangbang: 心跳延迟 gap=46836s, MC状态=offline
   🔍 Artifact 验证...
   📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-1000.md (0 issues, 0 fixed)
+=== 2026-04-28 10:10:02 舰队监管 ===
+  ✅ #102 白起 (开发者): GW 100.64.63.98:8644 OK
+  ✅ #103 王翦 (开发者): GW 100.67.214.106:8644 OK
+  ✅ #104 丞相 (开发者): GW 100.76.65.47:8644 OK
+  ✅ #106 俊秀 (QA审计): GW 100.64.63.98:8644 OK
+  ✅ #107 雪莹 (QA审计): GW 100.67.214.106:8644 OK
+  ✅ #108 红婳 (QA审计): GW 100.76.65.47:8644 OK
+  ✅ #105 萱萱 (社交媒体): GW localhost:8644 OK
+  💔 #105 萱萱: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #106 俊秀: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #107 雪莹: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #108 红婳: 心跳延迟 gap=99999s, MC状态=offline
+  💔 #101 xiangbang: 心跳延迟 gap=47437s, MC状态=offline
+  🔍 Artifact 验证...
+  📋 报告: /home/agentuser/xianqin/logs/fleet-report-20260428-1010.md (0 issues, 0 fixed)
