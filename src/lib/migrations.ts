@@ -1436,6 +1436,55 @@ const migrations: Migration[] = [
       db.exec(`ALTER TABLE tasks ADD COLUMN parent_id INTEGER DEFAULT NULL`)
       db.exec(`CREATE INDEX IF NOT EXISTS idx_tasks_parent_id ON tasks(parent_id)`)
     }
+  },
+  {
+    id: '053_agent_global_id',
+    up(db: Database.Database) {
+      // Add global_id (UUID) for immutable agent identity.
+      // Agents reference each other by global_id instead of mutable display names.
+      const agentCols = db.prepare(`PRAGMA table_info(agents)`).all() as Array<{ name: string }>
+      const hasCol = (name: string) => agentCols.some((c) => c.name === name)
+
+      // Core identity columns
+      if (!hasCol('global_id')) db.exec(`ALTER TABLE agents ADD COLUMN global_id TEXT`)
+      // UNIQUE index instead of column constraint (SQLite ALTER TABLE limitation)
+      db.exec(`CREATE UNIQUE INDEX IF NOT EXISTS idx_agents_global_id_unique ON agents(global_id)`)
+      if (!hasCol('display_name')) db.exec(`ALTER TABLE agents ADD COLUMN display_name TEXT`)
+
+      // Rank / 爵位
+      if (!hasCol('rank_title')) db.exec(`ALTER TABLE agents ADD COLUMN rank_title TEXT`)        // e.g. "簪袅"
+      if (!hasCol('rank_score')) db.exec(`ALTER TABLE agents ADD COLUMN rank_score INTEGER DEFAULT 0`)
+
+      // Hierarchy
+      if (!hasCol('parent_global_id')) db.exec(`ALTER TABLE agents ADD COLUMN parent_global_id TEXT`)
+
+      // Fleet deployment info
+      if (!hasCol('ssh_host')) db.exec(`ALTER TABLE agents ADD COLUMN ssh_host TEXT`)              // tailscale IP
+      if (!hasCol('ssh_user')) db.exec(`ALTER TABLE agents ADD COLUMN ssh_user TEXT`)              // "qin"
+      if (!hasCol('gateway_port')) db.exec(`ALTER TABLE agents ADD COLUMN gateway_port INTEGER`)   // 8644
+      if (!hasCol('wiki_repo')) db.exec(`ALTER TABLE agents ADD COLUMN wiki_repo TEXT`)            // "wiki-6"
+
+      // Extensible
+      if (!hasCol('tags')) db.exec(`ALTER TABLE agents ADD COLUMN tags TEXT`)                      // JSON array
+      if (!hasCol('metadata')) db.exec(`ALTER TABLE agents ADD COLUMN metadata TEXT`)              // JSON blob
+
+      // Populate global_id for existing agents with sequential numbers (QQ-style).
+      // Lower number = earlier member = more seniority. Numbers never recycled.
+      const agents = db.prepare(`SELECT id, name, workspace_id FROM agents WHERE global_id IS NULL ORDER BY id ASC`).all() as Array<{ id: number; name: string; workspace_id: number }>
+      const updateGlobalId = db.prepare(`UPDATE agents SET global_id = ? WHERE id = ?`)
+      const updateDisplayName = db.prepare(`UPDATE agents SET display_name = ? WHERE id = ? AND display_name IS NULL`)
+
+      // Start from 101 (reserve 1-100 for system/internal use)
+      let nextId = 101
+      for (const agent of agents) {
+        const gid = String(nextId++)
+        updateGlobalId.run(gid, agent.id)
+        updateDisplayName.run(agent.name, agent.id)
+      }
+
+      // Index
+      db.exec(`CREATE INDEX IF NOT EXISTS idx_agents_global_id ON agents(global_id)`)
+    }
   }
 ]
 

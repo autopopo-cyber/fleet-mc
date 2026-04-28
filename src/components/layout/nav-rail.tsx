@@ -31,6 +31,8 @@ const navGroups: NavGroup[] = [
       { id: 'overview', label: 'Overview', icon: <OverviewIcon />, priority: true, essential: true },
       { id: 'agents', label: 'Agents', icon: <AgentsIcon />, priority: true, essential: true },
       { id: 'tasks', label: 'Tasks', icon: <TasksIcon />, priority: true, essential: true },
+      { id: 'plan-tree', label: '作战图', icon: <TreeIcon />, priority: true, essential: true },
+      { id: 'fleet-chat', label: '舰队大厅', icon: <ChatIcon />, priority: true, essential: true },
       { id: 'chat', label: 'Chat', icon: <ChatIcon />, priority: false, essential: true },
       { id: 'channels', label: 'Channels', icon: <ChannelsIcon />, priority: false },
       { id: 'skills', label: 'Skills', icon: <SkillsIcon />, priority: false },
@@ -1243,6 +1245,20 @@ function TasksIcon() {
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <rect x="2" y="1" width="12" height="14" rx="1.5" />
       <path d="M5 5h6M5 8h6M5 11h3" />
+    </svg>
+  )
+}
+
+function TreeIcon() {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M8 1v6M8 7l-3 3M8 7l3 3" />
+      <circle cx="8" cy="1" r="1.5" />
+      <circle cx="5" cy="10" r="1.5" />
+      <circle cx="11" cy="10" r="1.5" />
+      <circle cx="4" cy="14" r="1.2" />
+      <circle cx="7" cy="14" r="1.2" />
+      <circle cx="10" cy="14" r="1.2" />
     </svg>
   )
 }

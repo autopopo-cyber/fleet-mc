@@ -105,6 +105,27 @@ export function AgentSquadPanelPhase3() {
   const [syncing, setSyncing] = useState(false)
   const [syncToast, setSyncToast] = useState<string | null>(null)
   const [showHidden, setShowHidden] = useState(false)
+  const [gatewayHealth, setGatewayHealth] = useState<Record<string, { alive: boolean; latency_ms: number }>>({})
+
+  // Fetch gateway health every 60s
+  useEffect(() => {
+    const fetchHealth = async () => {
+      try {
+        const resp = await fetch('/api/agents/health')
+        if (resp.ok) {
+          const data = await resp.json()
+          const map: Record<string, any> = {}
+          for (const a of data.agents || []) {
+            map[a.global_id] = { alive: a.gateway_alive, latency_ms: a.latency_ms }
+          }
+          setGatewayHealth(map)
+        }
+      } catch {}
+    }
+    fetchHealth()
+    const interval = setInterval(fetchHealth, 60000)
+    return () => clearInterval(interval)
+  }, [])
 
   // Sync agents from gateway config or local disk
   const syncFromConfig = async (source?: 'local') => {
@@ -416,7 +437,10 @@ export function AgentSquadPanelPhase3() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {agents.map(agent => {
+            {agents.filter(a => {
+              const gid = (a as any).global_id
+              return gid && /^\d+$/.test(gid) && parseInt(gid) >= 101 && parseInt(gid) < 200
+            }).map(agent => {
               const modelName = formatModelName(agent.config)
               const taskStatsLine = buildTaskStatParts(agent.taskStats)
 
@@ -435,7 +459,12 @@ export function AgentSquadPanelPhase3() {
                       <AgentAvatar name={agent.name} size="md" />
                       <div className="min-w-0">
                         <div className="flex items-center gap-1.5">
-                          <h3 className="font-semibold text-foreground truncate">{agent.name}</h3>
+                          <h3 className="font-semibold text-foreground truncate">
+                            {(agent as any).global_id && (
+                              <span className="text-2xs font-mono text-muted-foreground/50 mr-1">#{(agent as any).global_id}</span>
+                            )}
+                            {agent.name}
+                          </h3>
                           {(agent as any).source && (agent as any).source !== 'manual' && (
                             <span className={`text-2xs px-1.5 py-0.5 rounded-full border ${
                               (agent as any).source === 'local'
@@ -449,12 +478,25 @@ export function AgentSquadPanelPhase3() {
                           )}
                         </div>
                         <p className="text-xs text-muted-foreground truncate">
-                          {agent.role}{modelName && <> · <span className="font-mono text-muted-foreground/80">{modelName}</span></>}
+                          {agent.role}
+                          {(agent as any).rank_title && (
+                            <span className="ml-1 text-amber-400/80">· {(agent as any).rank_title}</span>
+                          )}
+                          {modelName && <> · <span className="font-mono text-muted-foreground/80">{modelName}</span></>}
                         </p>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-2 shrink-0">
+                      {(() => {
+                        const gh = gatewayHealth[(agent as any).global_id]
+                        return gh ? (
+                          <div
+                            className={`w-2 h-2 rounded-full ${gh.alive ? 'bg-green-400' : 'bg-red-400'}`}
+                            title={gh.alive ? `Gateway OK (${gh.latency_ms}ms)` : 'Gateway OFFLINE'}
+                          />
+                        ) : null
+                      })()}
                       {hasRecentHeartbeat(agent) && (
                         <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" title="Recent heartbeat" />
                       )}

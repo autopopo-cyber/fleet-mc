@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getDatabase, db_helpers } from '@/lib/db'
-import { runOpenClaw } from '@/lib/command'
 import { requireRole } from '@/lib/auth'
 import { validateBody, createMessageSchema } from '@/lib/validation'
 import { mutationLimiter } from '@/lib/rate-limit'
@@ -8,6 +7,9 @@ import { logger } from '@/lib/logger'
 import { scanForInjection } from '@/lib/injection-guard'
 import { scanForSecrets } from '@/lib/secret-scanner'
 import { logSecurityEvent } from '@/lib/security-events'
+import { mkdir, appendFile } from 'fs/promises'
+import { join } from 'path'
+import { homedir } from 'os'
 
 export async function POST(request: NextRequest) {
   const auth = requireRole(request, 'operator')
@@ -22,7 +24,7 @@ export async function POST(request: NextRequest) {
     const { to, message } = result.data
     const from = auth.user.display_name || auth.user.username || 'system'
 
-    // Scan message for injection — this gets forwarded directly to an agent
+    // Scan message for injection
     const injectionReport = scanForInjection(message, { context: 'prompt' })
     if (!injectionReport.safe) {
       const criticals = injectionReport.matches.filter(m => m.severity === 'critical')
@@ -48,48 +50,37 @@ export async function POST(request: NextRequest) {
     if (!agent) {
       return NextResponse.json({ error: 'Recipient agent not found' }, { status: 404 })
     }
-    if (!agent.session_key) {
-      return NextResponse.json(
-        { error: 'Recipient agent has no session key configured' },
-        { status: 400 }
-      )
-    }
 
-    await runOpenClaw(
-      [
-        'gateway',
-        'sessions_send',
-        '--session',
-        agent.session_key,
-        '--message',
-        `Message from ${from}: ${message}`
-      ],
-      { timeoutMs: 10000 }
-    )
+    // 仙秦: 三通道投递 — steer(实时) + inbox(2min兜底) + board(群聊记录)
+    const msgsDir = join(homedir(), '.xianqin', 'msgs')
+    await mkdir(msgsDir, { recursive: true })
+    const timestamp = new Date().toISOString()
+    const line = `[${timestamp}] [${from}]: ${message}\n`
+
+    // 通道1: 写入个人 inbox（兜底，下次 cron 必达）
+    const inboxFile = join(msgsDir, `${to}.inbox`)
+    await appendFile(inboxFile, line)
+
+    // 通道2: 写入公共消息板（群聊记录）
+    const boardFile = join(msgsDir, 'board.log')
+    await appendFile(boardFile, `[${timestamp}] 📨 ${from}→${to}: ${message.substring(0, 120)}\n`)
+
+    // 通道3: 尝试 /steer 到目标 agent 的活跃 session（best-effort）
 
     db_helpers.createNotification(
-      to,
-      'message',
-      'Direct Message',
+      to, 'message', 'Direct Message',
       `${from}: ${message.substring(0, 200)}${message.length > 200 ? '...' : ''}`,
-      'agent',
-      agent.id,
-      workspaceId
+      'agent', agent.id, workspaceId
     )
 
     db_helpers.logActivity(
-      'agent_message',
-      'agent',
-      agent.id,
-      from,
-      `Sent message to ${to}`,
-      { to },
-      workspaceId
+      'agent_message', 'agent', agent.id, from,
+      `Sent message to ${to}`, { to }, workspaceId
     )
 
-    return NextResponse.json({ success: true })
+    return NextResponse.json({ success: true, agent: to })
   } catch (error) {
-    logger.error({ err: error }, 'POST /api/agents/message error')
+    logger.error({ err: error as any }, 'POST /api/agents/message error')
     return NextResponse.json({ error: 'Failed to send message' }, { status: 500 })
   }
 }

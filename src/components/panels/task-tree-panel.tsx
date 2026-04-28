@@ -8,6 +8,7 @@ import { useTranslations } from 'next-intl'
 interface Task {
   id: number
   title: string
+  description?: string
   status: string
   priority: string
   assigned_to: string | null
@@ -110,12 +111,18 @@ export function TaskTreePanel() {
     { id: 0, name: '加载中...', slug: 'loading', status: 'active', color: '#6b7280' }
   ]
 
+  const [selectedTask, setSelectedTask] = useState<number | null>(null)
+
   const toggle = (id: number) => {
     setCollapsed(prev => {
       const next = new Set(prev)
       next.has(id) ? next.delete(id) : next.add(id)
       return next
     })
+  }
+
+  const selectTask = (id: number) => {
+    setSelectedTask(prev => prev === id ? null : id)
   }
 
   // Group tasks by project
@@ -174,6 +181,8 @@ export function TaskTreePanel() {
                     node={node}
                     collapsed={collapsed}
                     onToggle={toggle}
+                    selectedTask={selectedTask}
+                    onSelect={selectTask}
                   />
                 ))}
               </div>
@@ -195,7 +204,7 @@ export function TaskTreePanel() {
               </div>
               <div className="ml-1">
                 {rootNodes.map(node => (
-                  <TreeNodeRow key={node.task.id} node={node} collapsed={collapsed} onToggle={toggle} />
+                  <TreeNodeRow key={node.task.id} node={node} collapsed={collapsed} onToggle={toggle} selectedTask={selectedTask} onSelect={selectTask} />
                 ))}
               </div>
             </div>
@@ -212,10 +221,14 @@ function TreeNodeRow({
   node,
   collapsed,
   onToggle,
+  selectedTask,
+  onSelect,
 }: {
   node: TreeNode
   collapsed: Set<number>
   onToggle: (id: number) => void
+  selectedTask: number | null
+  onSelect: (id: number) => void
 }) {
   const { task, children, level } = node
   const status = STATUS_CONFIG[task.status] || { label: '❓', color: '#6b7280', bg: 'transparent' }
@@ -230,6 +243,7 @@ function TreeNodeRow({
         className="flex items-center gap-1.5 py-1 px-2 rounded-md hover:bg-surface-1/50 cursor-pointer transition-colors text-sm group"
         style={{ paddingLeft: `${12 + indent}px`, minWidth: `${400 + indent}px` }}
         onClick={() => onToggle(task.id)}
+        onDoubleClick={() => onSelect(task.id)}
       >
         {/* Expand/collapse toggle */}
         <span className="w-4 h-4 flex items-center justify-center flex-shrink-0">
@@ -258,6 +272,7 @@ function TreeNodeRow({
 
         {/* Title */}
         <span className="truncate flex-1 min-w-0 text-foreground">
+          <span className="text-[10px] text-muted-foreground/50 font-mono mr-1 select-none">#{task.id}</span>
           {task.title}
         </span>
 
@@ -281,6 +296,24 @@ function TreeNodeRow({
         )}
       </div>
 
+      {/* Detail panel — shown on double-click */}
+      {selectedTask === task.id && (
+        <div
+          className="ml-4 my-1 p-3 rounded-lg border border-border/50 bg-surface-1/30 text-xs"
+          style={{ marginLeft: `${32 + indent}px` }}
+        >
+          {task.description && (
+            <p className="text-muted-foreground mb-2 leading-relaxed whitespace-pre-wrap">{task.description}</p>
+          )}
+          <div className="flex gap-4 text-muted-foreground/70">
+            <span>状态: <span className="text-foreground/90">{task.status}</span></span>
+            <span>优先级: <span className="text-foreground/90">{task.priority}</span></span>
+            {task.assigned_to && <span>负责人: <span className="text-foreground/90">{task.assigned_to}</span></span>}
+            <span>创建: {formatDate(task.created_at)}</span>
+          </div>
+        </div>
+      )}
+
       {/* Children */}
       {hasChildren && !isCollapsed && (
         <div className="border-l border-border/30 ml-4">
@@ -290,6 +323,8 @@ function TreeNodeRow({
               node={{ ...child, level: child.level }}
               collapsed={collapsed}
               onToggle={onToggle}
+              selectedTask={selectedTask}
+              onSelect={onSelect}
             />
           ))}
         </div>

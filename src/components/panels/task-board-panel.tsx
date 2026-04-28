@@ -987,6 +987,7 @@ export function TaskBoardPanel() {
                     <div className="flex-1 min-w-0">
                       <div className="flex justify-between items-start gap-2">
                         <h4 className="text-foreground font-medium text-sm leading-tight line-clamp-2">
+                          <span className="text-[11px] text-muted-foreground/60 font-mono mr-1.5 select-none inline-block">#{task.id}</span>
                           {task.title}
                         </h4>
                         <div className="flex items-center gap-1.5 shrink-0">
@@ -1446,7 +1447,7 @@ function TaskDetailModal({
                   {t(`priority_${task.priority}` as any)}
                 </span>
               </div>
-              <h3 id="task-detail-title" className="text-lg font-semibold text-foreground leading-tight">{task.title}</h3>
+              <h3 id="task-detail-title" className="text-lg font-semibold text-foreground leading-tight"><span className="text-sm text-muted-foreground/50 font-mono mr-1 select-none">#{task.id}</span>{task.title}</h3>
             </div>
             <div className="flex items-center gap-1 shrink-0">
               <Button variant="ghost" size="icon-sm" onClick={() => onEdit(task)} className="text-muted-foreground hover:text-foreground" aria-label={t('edit')}>
