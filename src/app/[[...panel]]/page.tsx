@@ -11,8 +11,9 @@ import { CronManagementPanel } from '@/components/panels/cron-management-panel'
 import { MemoryBrowserPanel } from '@/components/panels/memory-browser-panel'
 import { CostTrackerPanel } from '@/components/panels/cost-tracker-panel'
 import { TaskBoardPanel } from '@/components/panels/task-board-panel'
-// TaskTreePanel — enabled for plan-tree mobile view
-import { TaskTreePanel } from '@/components/panels/task-tree-panel'
+// PlanTreePanel — spacetime project visualization
+import { PlanTreePanel } from '@/components/panels/plan-tree-panel'
+import { GanttPanel } from '@/components/panels/gantt-panel'
 import { FleetChatPanel } from '@/components/panels/fleet-chat-panel'
 import { ActivityFeedPanel } from '@/components/panels/activity-feed-panel'
 import { AgentSquadPanelPhase3 } from '@/components/panels/agent-squad-panel-phase3'
@@ -535,7 +536,9 @@ function ContentRouter({ tab }: { tab: string }) {
       return <TaskBoardPanel />
     case 'plan-tree':
     case 'task-tree':
-      return <TaskTreePanel />
+      return <PlanTreePanel />
+    case 'gantt':
+      return <GanttPanel />
     case 'fleet-chat':
       return <FleetChatPanel />
     case 'agents':

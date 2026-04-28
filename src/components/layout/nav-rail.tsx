@@ -31,7 +31,8 @@ const navGroups: NavGroup[] = [
       { id: 'overview', label: 'Overview', icon: <OverviewIcon />, priority: true, essential: true },
       { id: 'agents', label: 'Agents', icon: <AgentsIcon />, priority: true, essential: true },
       { id: 'tasks', label: 'Tasks', icon: <TasksIcon />, priority: true, essential: true },
-      { id: 'plan-tree', label: '作战图', icon: <TreeIcon />, priority: true, essential: true },
+      { id: 'plan-tree', label: '时空图', icon: <TreeIcon />, priority: true, essential: true },
+      { id: 'gantt', label: '甘特图', icon: <GanttIcon />, priority: true, essential: true },
       { id: 'fleet-chat', label: '舰队大厅', icon: <ChatIcon />, priority: true, essential: true },
       { id: 'chat', label: 'Chat', icon: <ChatIcon />, priority: false, essential: true },
       { id: 'channels', label: 'Channels', icon: <ChannelsIcon />, priority: false },
@@ -1259,6 +1260,16 @@ function TreeIcon() {
       <circle cx="4" cy="14" r="1.2" />
       <circle cx="7" cy="14" r="1.2" />
       <circle cx="10" cy="14" r="1.2" />
+    </svg>
+  )
+}
+
+function GanttIcon() {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="1" y="3" width="8" height="2.5" rx="0.5" />
+      <rect x="3" y="7" width="10" height="2.5" rx="0.5" />
+      <rect x="2" y="11" width="6" height="2.5" rx="0.5" />
     </svg>
   )
 }
